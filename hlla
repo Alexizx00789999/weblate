@@ -1,0 +1,57 @@
+resource "azapi_resource" "symbolicname" {
+  type = "Microsoft.MobileNetwork/mobileNetworks/services@2024-02-01"
+  name = "string"
+  location = "string"
+  parent_id = "string"
+  tags = {
+    tagName1 = "tagValue1"
+    tagName2 = "tagValue2"
+  }
+  body = jsonencode({
+    properties = {
+      pccRules = [
+        {
+          ruleName = "string"
+          rulePrecedence = int
+          ruleQosPolicy = {
+            5qi = int
+            allocationAndRetentionPriorityLevel = int
+            guaranteedBitRate = {
+              downlink = "string"
+              uplink = "string"
+            }
+            maximumBitRate = {
+              downlink = "string"
+              uplink = "string"
+            }
+            preemptionCapability = "string"
+            preemptionVulnerability = "string"
+          }
+          serviceDataFlowTemplates = [
+            {
+              direction = "string"
+              ports = [
+                "string"
+              ]
+              protocol = "string"
+              remoteIpList = "string"
+              templateName = "string"
+            }
+          ]
+          trafficControl = "string"
+        }
+      ]
+      servicePrecedence = int
+      serviceQosPolicy = {
+        5qi = int
+        allocationAndRetentionPriorityLevel = int
+        maximumBitRate = {
+          downlink = "string"
+          uplink = "string"
+        }
+        preemptionCapability = "string"
+        preemptionVulnerability = "string"
+      }
+    }
+  })
+}
